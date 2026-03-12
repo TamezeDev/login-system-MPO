@@ -34,33 +34,14 @@
    <center>
       <VBox id="loginBox" alignment="CENTER" maxHeight="500.0" maxWidth="500.0" prefHeight="600.0" prefWidth="500.0" spacing="30.0" BorderPane.alignment="CENTER">
          <children>
-            <VBox alignment="CENTER" spacing="20.0">
+            <VBox alignment="CENTER" spacing="50.0">
                <children>
-                  <Label styleClass="model-label-M" text="Datos del nuevo empleado:">
+                  <Label styleClass="model-label-M" text="Eliminar empleado:">
                      <padding>
                         <Insets left="30.0" right="30.0" top="20.0" />
-                     </padding></Label>
-                  <TextField fx:id="nameField" prefHeight="30.0" prefWidth="150.0" promptText="Nombre">
-                     <padding>
-                        <Insets left="10.0" top="30.0" />
                      </padding>
-                  </TextField>
-                  <TextField fx:id="lastNameField" layoutX="10.0" layoutY="56.0" prefHeight="30.0" prefWidth="150.0" promptText="Apellido">
-                     <padding>
-                        <Insets left="10.0" />
-                     </padding>
-                  </TextField>
+                  </Label>
                   <TextField fx:id="dniField" layoutX="10.0" layoutY="91.0" prefHeight="30.0" prefWidth="150.0" promptText="Dni">
-                     <padding>
-                        <Insets left="10.0" />
-                     </padding>
-                  </TextField>
-                  <TextField fx:id="emailField" layoutX="10.0" layoutY="126.0" prefHeight="30.0" prefWidth="150.0" promptText="Email">
-                     <padding>
-                        <Insets left="10.0" />
-                     </padding>
-                  </TextField>
-                  <TextField fx:id="passField" layoutX="10.0" layoutY="161.0" prefHeight="30.0" prefWidth="150.0" promptText="Contraseña">
                      <padding>
                         <Insets left="10.0" />
                      </padding>
@@ -81,7 +62,7 @@
                <children>
                   <HBox alignment="CENTER" fillHeight="false" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
                      <children>
-                        <Button fx:id="registerBtn" mnemonicParsing="false" styleClass="model-ButtonA" text="Registrar" />
+                        <Button fx:id="deleteUserBtn" mnemonicParsing="false" styleClass="model-ButtonA" text="Eliminar" />
                         <Button fx:id="clearBtn" mnemonicParsing="false" styleClass="model-ButtonA" text="Limpiar" />
                         <Button fx:id="goBackBtn" mnemonicParsing="false" styleClass="model-ButtonA" text="Regresar" />
                      </children>
