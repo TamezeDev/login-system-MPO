@@ -4,35 +4,42 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class AdminViewController implements Initializable {
+public class SearchUserViewController implements Initializable {
+    @FXML
+    private VBox UserDataBox;
 
     @FXML
-    private Button CheckTimersBtn;
+    private Button clearBtn;
 
     @FXML
-    private Button ListUserBtn;
+    private Button deleteUserBtn;
 
     @FXML
-    private Button ModifyUserBtn;
+    private TextField dniField;
 
     @FXML
-    private Button RemoveUserBtn;
+    private Label dniLabel;
 
     @FXML
-    private Button SearchUserBtn;
-
-    @FXML
-    private Button closeSessionBtn;
+    private Label emailLabel;
 
     @FXML
     private Label feedBackLabel;
 
     @FXML
-    private Button newUserBtn;
+    private Button goBackBtn;
+
+    @FXML
+    private Label lastNameLabel;
+
+    @FXML
+    private Label nameLabel;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
