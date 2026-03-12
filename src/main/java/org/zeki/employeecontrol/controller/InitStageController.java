@@ -1,0 +1,20 @@
+package org.zeki.employeecontrol.controller;
+
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import org.zeki.employeecontrol.Main;
+
+import java.io.IOException;
+
+public class InitStageController extends Application {
+    @Override
+    public void start(Stage stage) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(LoginViewController.class.getResource("/fxml/login-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 800, 600);
+        stage.setTitle("Employee control");
+        stage.setScene(scene);
+        stage.show();
+    }
+}
