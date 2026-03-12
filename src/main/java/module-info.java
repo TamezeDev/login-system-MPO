@@ -10,11 +10,10 @@ module org.zeki.employeecontrol {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires static lombok;
 
     opens org.zeki.employeecontrol to javafx.fxml;
     exports org.zeki.employeecontrol;
-    exports org.zeki.employeecontrol.controller;
-    opens org.zeki.employeecontrol.controller to javafx.fxml;
     exports org.zeki.employeecontrol.controller.scene;
     opens org.zeki.employeecontrol.controller.scene to javafx.fxml;
 }
