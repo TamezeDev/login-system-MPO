@@ -84,7 +84,7 @@
                <children>
                   <HBox alignment="CENTER" fillHeight="false" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
                      <children>
-                        <Button fx:id="deleteUserBtn" mnemonicParsing="false" styleClass="model-ButtonA" text="Eliminar" />
+                        <Button fx:id="searchBtn" mnemonicParsing="false" styleClass="model-ButtonA" text="Buscar" />
                         <Button fx:id="clearBtn" mnemonicParsing="false" styleClass="model-ButtonA" text="Limpiar" />
                         <Button fx:id="goBackBtn" mnemonicParsing="false" styleClass="model-ButtonA" text="Regresar" />
                      </children>

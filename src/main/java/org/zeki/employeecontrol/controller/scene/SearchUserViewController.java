@@ -18,7 +18,7 @@ public class SearchUserViewController implements Initializable {
     private Button clearBtn;
 
     @FXML
-    private Button deleteUserBtn;
+    private Button searchBtn;
 
     @FXML
     private TextField dniField;
