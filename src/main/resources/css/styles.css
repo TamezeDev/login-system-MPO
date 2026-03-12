@@ -2,6 +2,7 @@
 #loginRootPane {
     -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #153852, #153852, #5C7E93);
 }
+
 /* BOXES */
 #loginBox {
     -fx-border-color: #51A1D3;
@@ -10,6 +11,7 @@
     -fx-background-radius: 16px;
     -fx-border-radius: 16px;
 }
+
 /* TEXT_FIELD */
 TextField {
   -fx-background-color: transparent;
@@ -22,6 +24,7 @@ TextField {
   -fx-prompt-text-fill:  #fff;
   -fx-font-size: 16px;
 }
+
 /* BUTTONS */
 .model-ButtonA {
     -fx-padding: 5px 10px 5px 10px;
@@ -36,6 +39,7 @@ TextField {
     -fx-background-color: #5C7E93;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0.4, 0 ,4)
 }
+
 /* LABELS */
 .model-label-S {
     -fx-font-size: 18px;
@@ -56,5 +60,42 @@ TextField {
       -fx-font-size: 20px;
       -fx-text-fill:  #AE855D;
       -fx-font-family: "Dubai Medium";
+}
 
+/* TABLE */
+/* data background */
+#usersTable.table-view {
+    -fx-background-color: #5C7E93;
+    -fx-table-cell-border-color: #0C1416;
+}
+/* data text */
+#usersTable .table-cell {
+    -fx-alignment: center;
+    -fx-text-fill: #fff;
+    -fx-font-family: "Dubai Medium";
+    -fx-font-size: 16px;
+}
+/* header text */
+#usersTable .column-header .label {
+    -fx-alignment: center;
+    -fx-text-fill: #fff;
+    -fx-font-family: "Dubai Medium";
+    -fx-font-size: 18px;
+}
+/* header background */
+#usersTable .column-header-background {
+    -fx-background-color: #153852;
+}
+#usersTable .column-header {
+    -fx-background-color: transparent;
+}
+/* internal lines */
+#usersTable .table-row-cell {
+    -fx-border-color: #0C1416;
+    -fx-table-cell-border-color: #0C1416;
+}
+/* external lines */
+#usersTable .table-view {
+    -fx-border-color: #51A1D3;
+    -fx-border-width: 2px;
 }

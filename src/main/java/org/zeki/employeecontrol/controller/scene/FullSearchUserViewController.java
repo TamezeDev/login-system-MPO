@@ -5,6 +5,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -28,6 +29,10 @@ public class FullSearchUserViewController implements Initializable {
 
     @FXML
     private TableColumn<?, ?> nameColumn;
+
+    @FXML
+    private TableView<?> usersTable;
+
 
     @FXML
     private Button searchBtn;
