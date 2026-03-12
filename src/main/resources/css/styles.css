@@ -1,0 +1,60 @@
+/* PANELS */
+#loginRootPane {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #153852, #153852, #5C7E93);
+}
+/* BOXES */
+#loginBox {
+    -fx-border-color: #51A1D3;
+    -fx-border-width: 3px;
+    -fx-background-color:   #1B5B87;
+    -fx-background-radius: 16px;
+    -fx-border-radius: 16px;
+}
+/* TEXT_FIELD */
+TextField {
+  -fx-background-color: transparent;
+  -fx-text-box-border: transparent;
+  -fx-text-fill: #fff;
+  -fx-focus-color: transparent;
+  -fx-faint-focus-color: transparent;
+  -fx-border-color: transparent transparent #fff transparent;
+  -fx-border-width: 0 0 1px 0;
+  -fx-prompt-text-fill:  #fff;
+  -fx-font-size: 16px;
+}
+/* BUTTONS */
+.model-ButtonA {
+    -fx-padding: 5px 10px 5px 10px;
+    -fx-font-size: 16px;
+    -fx-background-radius: 8px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #fff;
+    -fx-background-color: #1D2B4F;
+}
+.model-ButtonA:hover {
+    -fx-cursor: hand;
+    -fx-background-color: #5C7E93;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0.4, 0 ,4)
+}
+/* LABELS */
+.model-label-S {
+    -fx-font-size: 18px;
+    -fx-text-fill: #fff;
+    -fx-font-family: "Dubai Medium";
+}
+.model-label-M {
+    -fx-font-size: 22px;
+    -fx-text-fill: #fff;
+    -fx-font-family: "Dubai Medium";
+}
+.model-label-L {
+    -fx-font-size: 34px;
+    -fx-text-fill: #fff;
+    -fx-font-family: "Dubai Medium";
+}
+.feedback-label{
+      -fx-font-size: 20px;
+      -fx-text-fill:  #AE855D;
+      -fx-font-family: "Dubai Medium";
+
+}
