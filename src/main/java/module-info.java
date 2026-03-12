@@ -15,4 +15,6 @@ module org.zeki.employeecontrol {
     exports org.zeki.employeecontrol;
     exports org.zeki.employeecontrol.controller;
     opens org.zeki.employeecontrol.controller to javafx.fxml;
+    exports org.zeki.employeecontrol.controller.scene;
+    opens org.zeki.employeecontrol.controller.scene to javafx.fxml;
 }

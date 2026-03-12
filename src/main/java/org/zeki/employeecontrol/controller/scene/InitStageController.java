@@ -1,10 +1,9 @@
-package org.zeki.employeecontrol.controller;
+package org.zeki.employeecontrol.controller.scene;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import org.zeki.employeecontrol.Main;
 
 import java.io.IOException;
 

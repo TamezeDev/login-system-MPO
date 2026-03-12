@@ -1,4 +1,4 @@
-package org.zeki.employeecontrol.controller;
+package org.zeki.employeecontrol.controller.scene;
 
 import javafx.fxml.Initializable;
 
