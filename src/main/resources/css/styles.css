@@ -64,38 +64,38 @@ TextField {
 
 /* TABLE */
 /* data background */
-#usersTable.table-view {
+#usersTable.table-view, #timeControlTable.table-view {
     -fx-background-color: #5C7E93;
     -fx-table-cell-border-color: #0C1416;
 }
 /* data text */
-#usersTable .table-cell {
+#usersTable, #timeControlTable .table-cell {
     -fx-alignment: center;
     -fx-text-fill: #fff;
     -fx-font-family: "Dubai Medium";
     -fx-font-size: 16px;
 }
 /* header text */
-#usersTable .column-header .label {
+#usersTable, #timeControlTable .column-header .label {
     -fx-alignment: center;
     -fx-text-fill: #fff;
     -fx-font-family: "Dubai Medium";
     -fx-font-size: 18px;
 }
 /* header background */
-#usersTable .column-header-background {
+#usersTable, #timeControlTable .column-header-background {
     -fx-background-color: #153852;
 }
-#usersTable .column-header {
+#usersTable, #timeControlTable .column-header {
     -fx-background-color: transparent;
 }
 /* internal lines */
-#usersTable .table-row-cell {
+#usersTable, #timeControlTable .table-row-cell {
     -fx-border-color: #0C1416;
     -fx-table-cell-border-color: #0C1416;
 }
 /* external lines */
-#usersTable .table-view {
+#usersTable, #timeControlTable .table-view {
     -fx-border-color: #51A1D3;
     -fx-border-width: 2px;
 }
