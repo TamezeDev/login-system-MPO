@@ -12,6 +12,7 @@ module org.zeki.employeecontrol {
     requires com.almasb.fxgl.all;
     requires static lombok;
     requires javafx.graphics;
+    requires javafx.base;
 
     opens org.zeki.employeecontrol to javafx.fxml;
     exports org.zeki.employeecontrol;

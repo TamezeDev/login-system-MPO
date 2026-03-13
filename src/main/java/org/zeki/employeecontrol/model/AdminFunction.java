@@ -9,7 +9,7 @@ public interface AdminFunction {
 
     void removeUser(String dni, Label label);
 
-    void searchUser(String id);
+    User searchUser(String id,Label label);
 
     void showAllUsers();
 

@@ -23,4 +23,11 @@ public class FormularyHelper {
             textField.clear();
         }
     }
+
+    public static void cleanLabels(Label[] labels) {
+        for (Label label : labels) {
+            label.setText("");
+        }
+    }
+
 }

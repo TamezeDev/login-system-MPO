@@ -66,8 +66,16 @@ public final class Admin extends User implements AdminFunction {
     }
 
     @Override
-    public void searchUser(String id) {
-
+    public User searchUser(String dni, Label label) {
+        boolean existsUser = AppController.getInstance().checkExistsDni(dni);
+        if (!existsUser) {
+            label.setText("Dni no encontrado");
+            AppController.getInstance().getTransitionHelper().hideFeedBackLabel(label);
+            return null;
+        }
+        // GET USER
+        User userFounded = AppController.getInstance().getUserByID(dni);
+        return userFounded;
     }
 
     @Override
