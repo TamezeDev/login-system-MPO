@@ -48,33 +48,19 @@ public class AdminViewController implements Initializable {
 
     private void initListeners() {
         // GO TO USER SCENE
-        newUserBtn.setOnAction((ActionEvent event) -> {
-            SceneHelper.changeScene(feedBackLabel, AppController.getInstance().getPathHelper().getNEW_EMPLOYEE_SCENE());
-        });
+        newUserBtn.setOnAction((ActionEvent event) -> SceneHelper.changeScene(feedBackLabel, AppController.getInstance().getPathHelper().getNEW_EMPLOYEE_SCENE()));
         // GO TO REMOVE USER SCENE
-        removeUserBtn.setOnAction((ActionEvent event) -> {
-            SceneHelper.changeScene(feedBackLabel, AppController.getInstance().getPathHelper().getREMOVE_EMPLOYEE_SCENE());
-        });
+        removeUserBtn.setOnAction((ActionEvent event) -> SceneHelper.changeScene(feedBackLabel, AppController.getInstance().getPathHelper().getREMOVE_EMPLOYEE_SCENE()));
         // GO TO SEARCH USER SCENE
-        searchUserBtn.setOnAction((ActionEvent event) -> {
-            SceneHelper.changeScene(feedBackLabel, AppController.getInstance().getPathHelper().getSINGLE_USER_INFO_SCENE());
-        });
+        searchUserBtn.setOnAction((ActionEvent event) -> SceneHelper.changeScene(feedBackLabel, AppController.getInstance().getPathHelper().getSINGLE_USER_INFO_SCENE()));
         // GO TO MODIFY PASS USER SCENE
-        modifyUserBtn.setOnAction((ActionEvent event) -> {
-            SceneHelper.changeScene(feedBackLabel, AppController.getInstance().getPathHelper().getPASS_CHANGE_SCENE());
-        });
+        modifyUserBtn.setOnAction((ActionEvent event) -> SceneHelper.changeScene(feedBackLabel, AppController.getInstance().getPathHelper().getPASS_CHANGE_SCENE()));
         // GO TO USER LIST SCENE
-        listUserBtn.setOnAction((ActionEvent event) -> {
-            SceneHelper.changeScene(feedBackLabel, AppController.getInstance().getPathHelper().getFULL_EMPLOYEE_SCENE());
-        });
+        listUserBtn.setOnAction((ActionEvent event) -> SceneHelper.changeScene(feedBackLabel, AppController.getInstance().getPathHelper().getFULL_EMPLOYEE_SCENE()));
         // GO TO CHECK TIME USERS SCENE
-        checkTimersBtn.setOnAction((ActionEvent event) -> {
-            SceneHelper.changeScene(feedBackLabel, AppController.getInstance().getPathHelper().getCONTROL_TIME_SCENE());
-        });
+        checkTimersBtn.setOnAction((ActionEvent event) -> SceneHelper.changeScene(feedBackLabel, AppController.getInstance().getPathHelper().getCONTROL_TIME_SCENE()));
         // GO BACK LOGIN SCENE
-        closeSessionBtn.setOnAction((ActionEvent event) -> {
-            SceneHelper.changeScene(feedBackLabel, AppController.getInstance().getPathHelper().getLOGIN_SCENE());
-        });
+        closeSessionBtn.setOnAction((ActionEvent event) -> SceneHelper.changeScene(feedBackLabel, AppController.getInstance().getPathHelper().getLOGIN_SCENE()));
 
     }
 

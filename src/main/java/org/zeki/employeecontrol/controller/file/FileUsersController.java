@@ -7,6 +7,7 @@ import org.zeki.employeecontrol.model.User;
 import org.zeki.employeecontrol.model.Worker;
 
 import java.io.*;
+import java.util.List;
 
 public final class FileUsersController extends FileController {
 
@@ -24,6 +25,8 @@ public final class FileUsersController extends FileController {
                 AppController.getInstance().createMainAdmin();
                 label.setText("Creado admin principal");
                 saveFile(label);
+                AppController.getInstance().getTransitionHelper().hideFeedBackLabel(label);
+                return;
             } catch (IOException e) {
                 label.setText("Error al leer fichero");
             }
@@ -58,7 +61,7 @@ public final class FileUsersController extends FileController {
     @Override
     public void saveFile(Label label) {
         // WRITING USERS FILE
-        try (ObjectOutputStream bos = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(file)))) {
+        try (ObjectOutputStream bos = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(file, false)))) {
             for (User user : usersList) {
                 bos.writeObject(user);
             }

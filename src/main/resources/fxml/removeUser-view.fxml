@@ -51,7 +51,7 @@
                   <Insets bottom="20.0" />
                </VBox.margin>
             </VBox>
-            <Label fx:id="feedBackLabel" styleClass="feedback-label" text="Este es el texto feedback" wrapText="true">
+            <Label fx:id="feedBackLabel" alignment="CENTER" minHeight="35.0" prefHeight="35.0" styleClass="feedback-label" text="Este es el texto feedback" visible="false" wrapText="true">
                <font>
                   <Font name="Segoe UI" size="12.0" />
                </font>

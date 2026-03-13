@@ -17,10 +17,12 @@ public final class Admin extends User implements AdminFunction {
 
         if (dniRepeat) {
             label.setText("Dni no disponible");
+            AppController.getInstance().getTransitionHelper().hideFeedBackLabel(label);
             return;
         }
         if (emailRepeat) {
             label.setText("Email no disponible");
+            AppController.getInstance().getTransitionHelper().hideFeedBackLabel(label);
             return;
         }
         // CHOICE NEW USER TYPE
@@ -31,23 +33,36 @@ public final class Admin extends User implements AdminFunction {
         if (userType.equals(UserType.TRABAJADOR)) {
             user = new Worker();
         }
-        name = (userData.get("name"));
-        lastName = (userData.get("lastName"));
-        dni = (userData.get("dni"));
-        email = (userData.get("email"));
-        pass = (userData.get("pass"));
+        user.setName(userData.get("name"));
+        user.setLastName(userData.get("lastName"));
+        user.setDni(userData.get("dni"));
+        user.setEmail(userData.get("email"));
+        user.setPass(userData.get("pass"));
         // ADD TO LIST AND SAVE
         AppController.getInstance().getUsersList().add(user);
         label.setText("Registro correcto");
         FileUsersController fileUsersController = new FileUsersController();
         fileUsersController.saveFile(label);
         AppController.getInstance().getTransitionHelper().hideFeedBackLabel(label);
-
     }
 
     @Override
-    public void removeUser() {
-
+    public void removeUser(String dni, Label label) {
+        // CHECK IF EXISTS
+        boolean existsUser = AppController.getInstance().checkExistsDni(dni);
+        if (!existsUser) {
+            label.setText("Dni no encontrado");
+            AppController.getInstance().getTransitionHelper().hideFeedBackLabel(label);
+            return;
+        }
+        // GET USER AND DELETE
+        User userFounded = AppController.getInstance().getUserByID(dni);
+        AppController.getInstance().getUsersList().remove(userFounded);
+        //SAVE AND SEND FEEDBACK
+        FileUsersController fileUsersController = new FileUsersController();
+        fileUsersController.saveFile(label);
+        label.setText("Borrado con éxito");
+        AppController.getInstance().getTransitionHelper().hideFeedBackLabel(label);
     }
 
     @Override

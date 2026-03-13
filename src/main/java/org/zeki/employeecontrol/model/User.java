@@ -1,9 +1,5 @@
 package org.zeki.employeecontrol.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import org.zeki.employeecontrol.controller.app.AppController;
 
 import java.io.Serializable;
@@ -11,10 +7,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
 public class User implements Login, Serializable {
     protected String name;
     protected String lastName;
@@ -45,4 +37,43 @@ public class User implements Login, Serializable {
         return results;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPass() {
+        return pass;
+    }
+
+    public void setPass(String pass) {
+        this.pass = pass;
+    }
 }

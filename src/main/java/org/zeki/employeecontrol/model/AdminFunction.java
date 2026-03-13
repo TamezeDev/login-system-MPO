@@ -7,7 +7,7 @@ import java.util.Map;
 public interface AdminFunction {
     void createNewUser(Map<String, String> userData, Enum<UserType> userType, Label label);
 
-    void removeUser();
+    void removeUser(String dni, Label label);
 
     void searchUser(String id);
 

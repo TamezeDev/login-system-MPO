@@ -6,7 +6,7 @@ public class PathHelper {
     private final String ADMIN_SCENE = "/fxml/admin-view.fxml";
     private final String EMPLOYEE_SCENE = "/fxml/workers-view.fxml";
     private final String NEW_EMPLOYEE_SCENE = "/fxml/newUser-view.fxml";
-    private final String REMOVE_EMPLOYEE_SCENE = "/fxml/lremoveUser-view.fxml";
+    private final String REMOVE_EMPLOYEE_SCENE = "/fxml/removeUser-view.fxml";
     private final String PASS_CHANGE_SCENE = "/fxml/passChange-view.fxml";
     private final String SINGLE_USER_INFO_SCENE = "/fxml/searchUser-view.fxml";
     private final String FULL_EMPLOYEE_SCENE = "/fxml/fullSearchUser-view.fxml";

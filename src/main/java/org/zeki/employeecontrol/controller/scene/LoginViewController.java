@@ -41,12 +41,9 @@ public class LoginViewController implements Initializable {
     private void initListeners() {
         // BTN LOGIN
         loginBtn.setOnAction((ActionEvent event) -> {
-            if (FormularyHelper.checkEmpty(groupTextFields())) {
-                feedBackLabel.setText("Hay campos vacíos");
-                AppController.getInstance().getTransitionHelper().hideFeedBackLabel(feedBackLabel);
-                return;
+            if (!FormularyHelper.checkEmpty(groupTextFields(), feedBackLabel)) {
+                AppController.getInstance().loginControl(dniField.getText(), passField.getText(), feedBackLabel);
             }
-            AppController.getInstance().loginControl(dniField.getText(), passField.getText(), feedBackLabel);
         });
         //BTN CLEAN
         clearBtn.setOnAction((ActionEvent event) -> FormularyHelper.cleanFields(groupTextFields()));
@@ -60,8 +57,10 @@ public class LoginViewController implements Initializable {
     }
 
     private void loadUserFile() {
-        FileUsersController fileUsersController = new FileUsersController();
-        fileUsersController.loadFile(feedBackLabel);
+        if (AppController.getInstance().getUsersList().isEmpty()) {
+            FileUsersController fileUsersController = new FileUsersController();
+            fileUsersController.loadFile(feedBackLabel);
+        }
     }
 }
 

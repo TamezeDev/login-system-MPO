@@ -71,6 +71,10 @@ public class AppController {
         return usersList.stream().anyMatch(user -> user.getEmail().equalsIgnoreCase(email));
     }
 
+    public User getUserByID(String dni) {
+        return usersList.stream().filter(user -> user.getDni().equalsIgnoreCase(dni)).findFirst().get();
+    }
+
     // DEFAULT ADMIN FOR INIT APP FIRST TIME  (9999 / admin)
     public void createMainAdmin() {
         User mainAdmin = new Admin();
