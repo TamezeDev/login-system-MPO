@@ -1,6 +1,7 @@
 package org.zeki.employeecontrol.util;
 
 public class Path {
+    // FXML
     private final String LOGIN_SCENE = "/fxml/login-view.fxml";
     private final String ADMIN_SCENE = "/fxml/admin-view.fxml";
     private final String EMPLOYEE_SCENE = "/fxml/workers-view.fxml";
@@ -10,6 +11,9 @@ public class Path {
     private final String SINGLE_USER_INFO_SCENE = "/fxml/searchUser-view.fxml";
     private final String FULL_EMPLOYEE_SCENE = "/fxml/fullSearchUser-view.fxml";
     private final String CONTROL_TIME_SCENE = "/fxml/controlTime-view.fxml";
+    // FILES
+    private final String USERS_FILE = "src/main/resources/file/users.bin";
+    private final String TIME_CONTROL_FILE = "src/main/resources/file/time_control.csv";
 
     public String getLOGIN_SCENE() {
         return LOGIN_SCENE;
@@ -45,5 +49,13 @@ public class Path {
 
     public String getCONTROL_TIME_SCENE() {
         return CONTROL_TIME_SCENE;
+    }
+
+    public String getUSERS_FILE() {
+        return USERS_FILE;
+    }
+
+    public String getTIME_CONTROL_FILE() {
+        return TIME_CONTROL_FILE;
     }
 }
