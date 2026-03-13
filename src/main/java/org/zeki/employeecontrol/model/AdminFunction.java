@@ -1,7 +1,11 @@
 package org.zeki.employeecontrol.model;
 
+import javafx.scene.control.Label;
+
+import java.util.Map;
+
 public interface AdminFunction {
-    void createNewUser();
+    void createNewUser(Map<String, String> userData, Enum<UserType> userType, Label label);
 
     void removeUser();
 

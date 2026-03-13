@@ -13,7 +13,7 @@
 }
 
 /* TEXT_FIELD */
-TextField {
+TextField, PasswordField {
   -fx-background-color: transparent;
   -fx-text-box-border: transparent;
   -fx-text-fill: #fff;

@@ -36,7 +36,7 @@
             <VBox alignment="CENTER" spacing="5.0">
                <children>
                   <Label styleClass="model-label-M" text="Área: Administración" />
-                  <Label layoutX="65.0" layoutY="84.0" styleClass="model-label-M" text="Bienvenid@ Nombre Apellido" />
+                  <Label fx:id="userNameLabel" layoutX="65.0" layoutY="84.0" styleClass="model-label-M" text="Bienvenid@ Nombre Apellido" />
                </children>
             </VBox>
             <Label styleClass="model-label-M" text="¿Qué quieres hacer?" />
@@ -45,24 +45,24 @@
                   <VBox spacing="30.0">
                      <children>
                         <Button fx:id="newUserBtn" mnemonicParsing="false" styleClass="model-ButtonA" text="Nuevo empleado" />
-                        <Button fx:id="RemoveUserBtn" mnemonicParsing="false" styleClass="model-ButtonA" text="Eliminar empleado" />
+                        <Button fx:id="removeUserBtn" mnemonicParsing="false" styleClass="model-ButtonA" text="Eliminar empleado" />
                      </children>
                   </VBox>
                   <VBox spacing="30.0">
                      <children>
-                        <Button fx:id="SearchUserBtn" mnemonicParsing="false" styleClass="model-ButtonA" text="Buscar empleados" />
-                        <Button fx:id="ListUserBtn" mnemonicParsing="false" styleClass="model-ButtonA" text="Listar empleados" />
+                        <Button fx:id="searchUserBtn" mnemonicParsing="false" styleClass="model-ButtonA" text="Buscar empleados" />
+                        <Button fx:id="listUserBtn" mnemonicParsing="false" styleClass="model-ButtonA" text="Listar empleados" />
                      </children>
                   </VBox>
                   <VBox spacing="30.0">
                      <children>
-                        <Button fx:id="ModifyUserBtn" mnemonicParsing="false" styleClass="model-ButtonA" text="Modificar empleado" />
-                        <Button fx:id="CheckTimersBtn" mnemonicParsing="false" styleClass="model-ButtonA" text="Comprobar fichadas" />
+                        <Button fx:id="modifyUserBtn" mnemonicParsing="false" styleClass="model-ButtonA" text="Modificar empleado" />
+                        <Button fx:id="checkTimersBtn" mnemonicParsing="false" styleClass="model-ButtonA" text="Comprobar fichadas" />
                      </children>
                   </VBox>
                </children>
             </HBox>
-            <Label fx:id="feedBackLabel" styleClass="feedback-label" text="Este es el texto feedback" wrapText="true">
+            <Label fx:id="feedBackLabel" alignment="CENTER" minWidth="35.0" prefHeight="35.0" styleClass="feedback-label" text="Este es el texto feedback" visible="false" wrapText="true">
                <font>
                   <Font name="Segoe UI" size="12.0" />
                </font>

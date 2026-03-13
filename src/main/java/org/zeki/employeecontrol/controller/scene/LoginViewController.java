@@ -5,9 +5,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import org.zeki.employeecontrol.model.User;
-import org.zeki.employeecontrol.util.FieldHelper;
+import org.zeki.employeecontrol.controller.app.AppController;
+import org.zeki.employeecontrol.controller.file.FileUsersController;
+import org.zeki.employeecontrol.util.FormularyHelper;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -27,23 +29,27 @@ public class LoginViewController implements Initializable {
     private Button loginBtn;
 
     @FXML
-    private TextField passField;
+    private PasswordField passField;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        initListeners();
+        loadUserFile(); // LOAD USER LIST
+        initListeners(); // INIT LISTENERS
     }
 
     private void initListeners() {
+        // BTN LOGIN
         loginBtn.setOnAction((ActionEvent event) -> {
-            if (FieldHelper.checkEmpty(groupTextFields())) {
+            if (FormularyHelper.checkEmpty(groupTextFields())) {
                 feedBackLabel.setText("Hay campos vacíos");
+                AppController.getInstance().getTransitionHelper().hideFeedBackLabel(feedBackLabel);
                 return;
             }
-
+            AppController.getInstance().loginControl(dniField.getText(), passField.getText(), feedBackLabel);
         });
-
-        clearBtn.setOnAction((ActionEvent event) -> FieldHelper.checkEmpty(groupTextFields()));
+        //BTN CLEAN
+        clearBtn.setOnAction((ActionEvent event) -> FormularyHelper.cleanFields(groupTextFields()));
     }
 
     private TextField[] groupTextFields() {
@@ -53,6 +59,9 @@ public class LoginViewController implements Initializable {
         return textFields;
     }
 
-
+    private void loadUserFile() {
+        FileUsersController fileUsersController = new FileUsersController();
+        fileUsersController.loadFile(feedBackLabel);
+    }
 }
 

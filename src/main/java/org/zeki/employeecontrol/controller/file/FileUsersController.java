@@ -1,5 +1,6 @@
 package org.zeki.employeecontrol.controller.file;
 
+import javafx.scene.control.Label;
 import org.zeki.employeecontrol.controller.app.AppController;
 import org.zeki.employeecontrol.model.Admin;
 import org.zeki.employeecontrol.model.User;
@@ -10,17 +11,24 @@ import java.io.*;
 public final class FileUsersController extends FileController {
 
     public FileUsersController() {
-        file = new File(AppController.getInstance().getPath().getUSERS_FILE());
+        file = new File(AppController.getInstance().getPathHelper().getUSERS_FILE());
         usersList = AppController.getInstance().getUsersList();
     }
 
     @Override
-    public void loadFile() {
+    public void loadFile(Label label) {
+        // FILE NOT FOUND - CREATE FILE AND GLOBAL ADMIN
         if (!file.exists()) {
-            feedbackMessage = ("Error al leer fichero");
-            return;
+            try {
+                file.createNewFile();
+                AppController.getInstance().createMainAdmin();
+                label.setText("Creado admin principal");
+                saveFile(label);
+            } catch (IOException e) {
+                label.setText("Error al leer fichero");
+            }
         }
-
+        // CASTING USER OBJECTS
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {
             while (true) {
                 try {
@@ -32,31 +40,34 @@ public final class FileUsersController extends FileController {
                     }
 
                 } catch (EOFException e) {
-                    feedbackMessage = "Usuarios cargados correctamente";
+                    label.setText("Usuarios cargados");
                     break;
                 }
             }
         } catch (ClassNotFoundException e) {
-            feedbackMessage = ("Error al obtener los usuarios");
+            label.setText("Error al obtener los usuarios");
             System.err.println("ERROR: " + e.getMessage());
 
         } catch (IOException e) {
-            feedbackMessage = "Error de lectura global";
+            label.setText("Error de lectura global");
             System.err.println("ERROR: " + e.getMessage());
         }
+        AppController.getInstance().getTransitionHelper().hideFeedBackLabel(label);
     }
 
     @Override
-    public void saveFile() {
+    public void saveFile(Label label) {
+        // WRITING USERS FILE
         try (ObjectOutputStream bos = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(file)))) {
             for (User user : usersList) {
                 bos.writeObject(user);
             }
-            feedbackMessage = "Usuario guardado correctamente";
+            label.setText("Usuario guardado correctamente");
         } catch (IOException e) {
-            feedbackMessage = "Error al guardar usuario";
+            label.setText("Error al guardar usuario");
             System.err.println("ERROR:" + e.getMessage());
         }
+        AppController.getInstance().getTransitionHelper().hideFeedBackLabel(label);
     }
 
 }

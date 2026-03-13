@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 import java.net.URL;
@@ -27,10 +28,10 @@ public class PassChangeViewController implements Initializable {
     private Button goBackBtn;
 
     @FXML
-    private TextField passField;
+    private PasswordField passField;
 
     @FXML
-    private TextField repeatPassField;
+    private PasswordField repeatPassField;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

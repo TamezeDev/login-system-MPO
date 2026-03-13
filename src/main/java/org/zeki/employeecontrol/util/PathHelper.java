@@ -1,6 +1,6 @@
 package org.zeki.employeecontrol.util;
 
-public class Path {
+public class PathHelper {
     // FXML
     private final String LOGIN_SCENE = "/fxml/login-view.fxml";
     private final String ADMIN_SCENE = "/fxml/admin-view.fxml";

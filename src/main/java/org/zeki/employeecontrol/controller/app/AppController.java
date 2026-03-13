@@ -1,11 +1,15 @@
 package org.zeki.employeecontrol.controller.app;
 
+import javafx.scene.Node;
+import javafx.scene.control.Label;
 import lombok.Getter;
 import lombok.Setter;
 import org.zeki.employeecontrol.model.Admin;
 import org.zeki.employeecontrol.model.User;
 import org.zeki.employeecontrol.model.Worker;
-import org.zeki.employeecontrol.util.Path;
+import org.zeki.employeecontrol.util.PathHelper;
+import org.zeki.employeecontrol.util.SceneHelper;
+import org.zeki.employeecontrol.util.TransitionHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +20,8 @@ import java.util.Map;
 public class AppController {
 
     private static AppController instance;
-    private final Path path;
+    private final PathHelper pathHelper;
+    private final TransitionHelper transitionHelper;
 
     private List<User> usersList;
     private List<String[]> usersCheckTime;
@@ -25,9 +30,11 @@ public class AppController {
     private User currentUser;
 
     private AppController() {
-        path = new Path();
+        // INIT COMPONENTS
+        pathHelper = new PathHelper();
         usersList = new ArrayList<>();
         usersCheckTime = new ArrayList<>();
+        transitionHelper = new TransitionHelper();
     }
 
     public static AppController getInstance() {
@@ -37,18 +44,42 @@ public class AppController {
         return instance;
     }
 
-    public void loginControl(String dni, String pass) {
+    public void loginControl(String dni, String pass, Node anyNode) {
+        Label nodeLabel = (Label) anyNode;
         User user = new User();
         Map<Boolean, String> result = user.login(dni, pass);
+        // SHOW FEEDBACK
         if (result.containsKey(false)) {
-            feedBackMessage = result.get(false);
-        } else if (result.containsKey(true)) {
-            if (currentUser instanceof Admin) {
-                //TODO: SET ADMIN PANE
-            } else if (currentUser instanceof Worker) {
-                // TODO:SET WORKER PANE
-            }
+            nodeLabel.setText(result.get(false));
+            transitionHelper.hideFeedBackLabel(nodeLabel);
+            return;
         }
+        // SET NEW SCENE
+        feedBackMessage = result.get(true);
+        if (currentUser instanceof Admin) {
+            SceneHelper.changeScene(anyNode, pathHelper.getADMIN_SCENE());
+        } else if (currentUser instanceof Worker) {
+            SceneHelper.changeScene(anyNode, pathHelper.getEMPLOYEE_SCENE());
+        }
+    }
+
+    public boolean checkExistsDni(String dni) {
+        return usersList.stream().anyMatch(user -> user.getDni().equalsIgnoreCase(dni));
+    }
+
+    public boolean checkExistsEmail(String email) {
+        return usersList.stream().anyMatch(user -> user.getEmail().equalsIgnoreCase(email));
+    }
+
+    // DEFAULT ADMIN FOR INIT APP FIRST TIME  (9999 / admin)
+    public void createMainAdmin() {
+        User mainAdmin = new Admin();
+        mainAdmin.setName("main");
+        mainAdmin.setLastName("admin");
+        mainAdmin.setDni("9999");
+        mainAdmin.setEmail("mainAdmin@admins.com");
+        mainAdmin.setPass("admin");
+        usersList.add(mainAdmin);
     }
 
 

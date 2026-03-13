@@ -11,6 +11,7 @@ module org.zeki.employeecontrol {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
     requires static lombok;
+    requires javafx.graphics;
 
     opens org.zeki.employeecontrol to javafx.fxml;
     exports org.zeki.employeecontrol;
