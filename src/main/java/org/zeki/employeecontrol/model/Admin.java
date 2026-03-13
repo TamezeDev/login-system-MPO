@@ -1,10 +1,7 @@
 package org.zeki.employeecontrol.model;
 
-public final class Admin extends User implements AdminFunction{
-    @Override
-    public void login() {
-        super.login();
-    }
+public final class Admin extends User implements AdminFunction {
+    protected final long SERIAL_VERSION_UID = 1L;
 
     @Override
     public void createNewUser() {
