@@ -87,7 +87,7 @@ public class SearchUserViewController implements Initializable {
         }
         Admin currentAdmin = (Admin) AppController.getInstance().getCurrentUser();
         User user = currentAdmin.searchUser(dniField.getText(), feedBackLabel);
-        if (user != null){
+        if (user != null) {
             nameLabel.setText(user.getName());
             lastNameLabel.setText(user.getLastName());
             emailLabel.setText(user.getEmail());

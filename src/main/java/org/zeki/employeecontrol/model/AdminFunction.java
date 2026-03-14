@@ -13,7 +13,7 @@ public interface AdminFunction {
 
     void showAllUsers();
 
-    void changeUserPass();
+    void changeUserPass(String dni, String pass, Label label);
 
     void showControlTimeUsers();
 }

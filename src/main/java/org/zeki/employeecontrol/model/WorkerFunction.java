@@ -1,6 +1,6 @@
 package org.zeki.employeecontrol.model;
 
-public interface WorkerFuntion {
+public interface WorkerFunction {
     void clockIn();
     void clockOut();
 }

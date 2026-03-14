@@ -1,6 +1,6 @@
 package org.zeki.employeecontrol.model;
 
-public final class Worker extends User implements WorkerFuntion{
+public final class Worker extends User implements WorkerFunction {
 
     private final long SERIAL_VERSION_UID = 1L;
 
