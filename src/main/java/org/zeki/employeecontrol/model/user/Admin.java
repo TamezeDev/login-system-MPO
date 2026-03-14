@@ -37,6 +37,11 @@ public final class Admin extends User implements AdminFunction {
     @Override
     public void removeUser(String dni, Label label) {
         if (dniExists(dni, label)) {
+            if (AppController.getInstance().getCurrentUser().getDni().equals(dni)) {
+                label.setText("No es posible autoborrarse");
+                AppController.getInstance().getTransitionHelper().feedBackTransition(label);
+                return;
+            }
             // GET USER AND DELETE
             User userFounded = AppController.getInstance().getUserByID(dni);
             AppController.getInstance().getUsersList().remove(userFounded);

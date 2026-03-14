@@ -80,7 +80,7 @@ public class AppController {
         mainAdmin.setName("main");
         mainAdmin.setLastName("admin");
         mainAdmin.setDni("9999");
-        mainAdmin.setEmail("mainAdmin@admins.com");
+        mainAdmin.setEmail("main@admin.com");
         mainAdmin.setPass("admin");
         usersList.add(mainAdmin);
     }
