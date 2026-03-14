@@ -88,38 +88,43 @@ TextField, PasswordField {
 }
 /* TABLE */
 /* data background */
-#usersTable.table-view, #timeControlTable.table-view {
+.personalTable.table-view, #timeControlTable.table-view {
     -fx-background-color: #5C7E93;
     -fx-table-cell-border-color: #0C1416;
 }
 /* data text */
-#usersTable, #timeControlTable .table-cell {
+.personalTable .table-cell {
     -fx-alignment: center;
     -fx-text-fill: #fff;
     -fx-font-family: "Dubai Medium";
     -fx-font-size: 16px;
 }
+/* container data */
+.personalTable .virtual-flow {
+    -fx-background-color: #5C7E93;
+}
 /* header text */
-#usersTable, #timeControlTable .column-header .label {
+.personalTable .column-header .label {
     -fx-alignment: center;
     -fx-text-fill: #fff;
     -fx-font-family: "Dubai Medium";
     -fx-font-size: 18px;
 }
 /* header background */
-#usersTable, #timeControlTable .column-header-background {
+.personalTable .column-header-background {
     -fx-background-color: #153852;
 }
-#usersTable, #timeControlTable .column-header {
+.personalTable .column-header {
     -fx-background-color: transparent;
 }
 /* internal lines */
-#usersTable, #timeControlTable .table-row-cell {
+.personalTable .table-row-cell {
+    -fx-background-color:transparent;
     -fx-border-color: #0C1416;
     -fx-table-cell-border-color: #0C1416;
 }
 /* external lines */
-#usersTable, #timeControlTable .table-view {
+.personalTable .table-view {
     -fx-border-color: #51A1D3;
     -fx-border-width: 2px;
 }

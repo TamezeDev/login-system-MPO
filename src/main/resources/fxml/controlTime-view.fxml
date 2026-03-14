@@ -45,7 +45,7 @@
                                 <Insets left="30.0" right="30.0" top="20.0"/>
                             </padding>
                         </Label>
-                        <TableView fx:id="timeControlTable">
+                        <TableView fx:id="timeControlTable" styleClass="personalTable">
                             <columns>
                                 <TableColumn fx:id="dniColumn" prefWidth="75.0" text="Dni"/>
                                 <TableColumn fx:id="emailColumn" prefWidth="75.0" text="Email"/>

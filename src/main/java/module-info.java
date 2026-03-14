@@ -14,6 +14,8 @@ module org.zeki.employeecontrol {
     requires javafx.graphics;
     requires javafx.base;
 
+    opens org.zeki.employeecontrol.model to java.base, javafx.fxml;
+    exports org.zeki.employeecontrol.model;
     opens org.zeki.employeecontrol to javafx.fxml;
     exports org.zeki.employeecontrol;
     exports org.zeki.employeecontrol.controller.scene;

@@ -1,5 +1,7 @@
 package org.zeki.employeecontrol.model;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.control.Label;
 import org.zeki.employeecontrol.controller.app.AppController;
 import org.zeki.employeecontrol.controller.file.FileUsersController;
@@ -65,8 +67,8 @@ public final class Admin extends User implements AdminFunction {
     }
 
     @Override
-    public void showAllUsers() {
-
+    public ObservableList<User> showAllUsers() {
+        return FXCollections.observableArrayList(AppController.getInstance().getUsersList());
     }
 
     @Override
