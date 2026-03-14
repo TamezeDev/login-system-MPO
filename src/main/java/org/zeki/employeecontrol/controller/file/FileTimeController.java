@@ -23,11 +23,11 @@ public final class FileTimeController extends FileController {
             }
             return;
         } catch (FileNotFoundException e) {
-            System.err.println("ERROR:" + e.getMessage());
+            System.err.println("ERROR: " + e.getMessage());
             label.setText("Error de acceso al fichero");
 
         } catch (IOException e) {
-            System.err.println("ERROR:" + e.getMessage());
+            System.err.println("ERROR: " + e.getMessage());
             label.setText("Error en la carga de datos");
         }
         AppController.getInstance().getTransitionHelper().hideFeedBackLabel(label);
@@ -35,10 +35,10 @@ public final class FileTimeController extends FileController {
 
     public void saveFile(String[] userTime, Label label) {
 
-        try (PrintWriter pw = new PrintWriter(new FileWriter(file, false))) {
+        try (PrintWriter pw = new PrintWriter(new FileWriter(file, true))) {
             if (userTime != null && userTime.length != 0) {
                 String timerPrepared = String.join(";", userTime);
-                pw.print(timerPrepared);
+                pw.println(timerPrepared);
             }
         } catch (IOException e) {
             label.setText("Error guardando la fichada");

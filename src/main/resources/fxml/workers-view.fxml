@@ -36,13 +36,13 @@
             <VBox alignment="CENTER" spacing="10.0">
                <children>
                   <Label styleClass="model-label-M" text="Área: Trabajadores" />
-                  <Label layoutX="65.0" layoutY="84.0" styleClass="model-label-M" text="Bienvenid@ Nombre Apellido" />
+                  <Label fx:id="userNameLabel" layoutX="65.0" layoutY="84.0" styleClass="model-label-M" text="Bienvenid@ Nombre Apellido" />
                </children>
             </VBox>
             <Label styleClass="model-label-M" text="¿Qué quieres hacer?" />
             <Button fx:id="userInputBtn" mnemonicParsing="false" styleClass="model-ButtonA" text="Fichar inicio" />
-            <Button fx:id="UserOutputBtn" mnemonicParsing="false" styleClass="model-ButtonA" text="Fichar salida" />
-            <Label fx:id="feedBackLabel" styleClass="feedback-label" text="Este es el texto feedback" wrapText="true">
+            <Button fx:id="userOutputBtn" mnemonicParsing="false" styleClass="model-ButtonA" text="Fichar salida" />
+            <Label fx:id="feedBackLabel" alignment="CENTER" minHeight="35.0" prefHeight="35.0" styleClass="feedback-label" text="Este es el texto feedback" visible="false" wrapText="true">
                <font>
                   <Font name="Segoe UI" size="12.0" />
                </font>

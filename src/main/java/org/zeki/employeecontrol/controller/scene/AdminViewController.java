@@ -6,6 +6,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import org.zeki.employeecontrol.controller.app.AppController;
+import org.zeki.employeecontrol.model.User;
 import org.zeki.employeecontrol.util.SceneHelper;
 
 import java.net.URL;
@@ -42,7 +43,7 @@ public class AdminViewController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        loadCurrentUserData();
+        AppController.getInstance().getCurrentUser().loadCurrentUserData(userNameLabel);
         initListeners();
     }
 
@@ -64,9 +65,4 @@ public class AdminViewController implements Initializable {
 
     }
 
-    private void loadCurrentUserData() {
-        String name = AppController.getInstance().getCurrentUser().getName();
-        String lastName = AppController.getInstance().getCurrentUser().getLastName();
-        userNameLabel.setText("Bienvenid@: " + name + " " + lastName);
-    }
 }

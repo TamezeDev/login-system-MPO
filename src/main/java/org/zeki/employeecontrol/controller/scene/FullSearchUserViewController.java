@@ -21,6 +21,9 @@ import java.util.ResourceBundle;
 public class FullSearchUserViewController implements Initializable {
 
     @FXML
+    private Label userNameLabel;
+
+    @FXML
     private Label feedBackLabel;
 
     @FXML
@@ -47,6 +50,7 @@ public class FullSearchUserViewController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        AppController.getInstance().getCurrentUser().loadCurrentUserData(userNameLabel);
         initListeners();
     }
 

@@ -25,7 +25,6 @@ public class AppController {
 
     private List<User> usersList;
     private List<String[]> usersCheckTime;
-    private String feedBackMessage;
 
     private User currentUser;
 
@@ -55,7 +54,6 @@ public class AppController {
             return;
         }
         // SET NEW SCENE
-        feedBackMessage = result.get(true);
         if (currentUser instanceof Admin) {
             SceneHelper.changeScene(anyNode, pathHelper.getADMIN_SCENE());
         } else if (currentUser instanceof Worker) {

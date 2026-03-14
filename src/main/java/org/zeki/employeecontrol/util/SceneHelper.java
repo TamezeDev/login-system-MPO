@@ -4,6 +4,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import org.zeki.employeecontrol.controller.app.AppController;
 
@@ -22,7 +23,9 @@ public class SceneHelper {
             stage.show();
 
         } catch (IOException e) {
-            AppController.getInstance().setFeedBackMessage("Error al cargar...");
+            Label label = (Label) node;
+            label.setText("Error al cargar scene");
+            AppController.getInstance().getTransitionHelper().hideFeedBackLabel(label);
             System.err.println("Error al capturar algún atributo de nodo");
             e.getMessage();
         }

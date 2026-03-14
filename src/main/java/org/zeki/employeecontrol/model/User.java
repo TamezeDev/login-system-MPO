@@ -1,5 +1,6 @@
 package org.zeki.employeecontrol.model;
 
+import javafx.scene.control.Label;
 import org.zeki.employeecontrol.controller.app.AppController;
 
 import java.io.Serializable;
@@ -35,6 +36,12 @@ public class User implements Login, Serializable {
         // DNI NOT FOUND
         results.put(false, "Dni no registrado");
         return results;
+    }
+
+    public void loadCurrentUserData(Label label) {
+        String name = AppController.getInstance().getCurrentUser().getName();
+        String lastName = AppController.getInstance().getCurrentUser().getLastName();
+        label.setText("Bienvenid@: " + name + " " + lastName);
     }
 
     public String getName() {
