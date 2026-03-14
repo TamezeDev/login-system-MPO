@@ -1,5 +1,8 @@
 package org.zeki.employeecontrol.util;
 
+import lombok.Getter;
+
+@Getter
 public class PathHelper {
     // FXML
     private final String LOGIN_SCENE = "/fxml/login-view.fxml";
@@ -14,48 +17,10 @@ public class PathHelper {
     // FILES
     private final String USERS_FILE = "src/main/resources/file/users.bin";
     private final String TIME_CONTROL_FILE = "src/main/resources/file/time_control.csv";
+    //IMG
+    private static final String MAIN_ICON = "/img/main_icon.png";
 
-    public String getLOGIN_SCENE() {
-        return LOGIN_SCENE;
-    }
-
-    public String getADMIN_SCENE() {
-        return ADMIN_SCENE;
-    }
-
-    public String getEMPLOYEE_SCENE() {
-        return EMPLOYEE_SCENE;
-    }
-
-    public String getNEW_EMPLOYEE_SCENE() {
-        return NEW_EMPLOYEE_SCENE;
-    }
-
-    public String getREMOVE_EMPLOYEE_SCENE() {
-        return REMOVE_EMPLOYEE_SCENE;
-    }
-
-    public String getPASS_CHANGE_SCENE() {
-        return PASS_CHANGE_SCENE;
-    }
-
-    public String getSINGLE_USER_INFO_SCENE() {
-        return SINGLE_USER_INFO_SCENE;
-    }
-
-    public String getFULL_EMPLOYEE_SCENE() {
-        return FULL_EMPLOYEE_SCENE;
-    }
-
-    public String getCONTROL_TIME_SCENE() {
-        return CONTROL_TIME_SCENE;
-    }
-
-    public String getUSERS_FILE() {
-        return USERS_FILE;
-    }
-
-    public String getTIME_CONTROL_FILE() {
-        return TIME_CONTROL_FILE;
+    public static String getMainIcon(){
+        return MAIN_ICON;
     }
 }
