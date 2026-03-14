@@ -4,9 +4,9 @@ import javafx.scene.Node;
 import javafx.scene.control.Label;
 import lombok.Getter;
 import lombok.Setter;
-import org.zeki.employeecontrol.model.Admin;
-import org.zeki.employeecontrol.model.User;
-import org.zeki.employeecontrol.model.Worker;
+import org.zeki.employeecontrol.model.user.Admin;
+import org.zeki.employeecontrol.model.user.User;
+import org.zeki.employeecontrol.model.user.Worker;
 import org.zeki.employeecontrol.util.PathHelper;
 import org.zeki.employeecontrol.util.SceneHelper;
 import org.zeki.employeecontrol.util.TransitionHelper;
@@ -20,6 +20,7 @@ import java.util.Map;
 public class AppController {
 
     private static AppController instance;
+    private boolean startedApp;
     private final PathHelper pathHelper;
     private final TransitionHelper transitionHelper;
 
@@ -50,7 +51,7 @@ public class AppController {
         // SHOW FEEDBACK
         if (result.containsKey(false)) {
             nodeLabel.setText(result.get(false));
-            transitionHelper.hideFeedBackLabel(nodeLabel);
+            transitionHelper.feedBackTransition(nodeLabel);
             return;
         }
         // SET NEW SCENE

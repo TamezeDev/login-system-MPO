@@ -33,7 +33,7 @@
         </HBox>
     </bottom>
     <center>
-        <VBox id="loginBox" alignment="CENTER" maxHeight="500.0" maxWidth="700.0" prefHeight="600.0" prefWidth="700.0" spacing="30.0" BorderPane.alignment="CENTER">
+        <VBox id="loginBox" alignment="CENTER" maxHeight="500.0" maxWidth="800.0" prefHeight="600.0" prefWidth="800.0" spacing="30.0" BorderPane.alignment="CENTER">
             <children>
                 <VBox alignment="CENTER" spacing="20.0">
                     <children>
@@ -46,8 +46,8 @@
                             <columns>
                                 <TableColumn fx:id="dniColumn" prefWidth="75.0" text="Dni" />
                                 <TableColumn fx:id="emailColumn" prefWidth="75.0" text="Email" />
-                                <TableColumn fx:id="inputColumn" prefWidth="75.0" text="Fecha - Hora" />
-                                <TableColumn fx:id="outputColumn" prefWidth="75.0" text="Acceso" />
+                                <TableColumn fx:id="dateHourColumn" prefWidth="75.0" text="Fecha / Hora" />
+                                <TableColumn fx:id="typeColumn" prefWidth="75.0" text="Acceso" />
                             </columns>
                      <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -55,7 +55,7 @@
                         </TableView>
                     </children>
                 </VBox>
-                <Label fx:id="feedBackLabel" styleClass="feedback-label" text="Este es el texto feedback" wrapText="true">
+                <Label fx:id="feedBackLabel" alignment="CENTER" minHeight="35.0" prefHeight="35.0" styleClass="feedback-label" text="Este es el texto feedback" visible="false" wrapText="true">
                     <font>
                         <Font name="Segoe UI" size="12.0" />
                     </font>
@@ -75,7 +75,7 @@
                 <Insets />
             </BorderPane.margin>
             <padding>
-                <Insets bottom="30.0" left="80.0" right="80.0" top="10.0" />
+                <Insets bottom="30.0" left="50.0" right="50.0" top="10.0" />
             </padding>
         </VBox>
     </center>

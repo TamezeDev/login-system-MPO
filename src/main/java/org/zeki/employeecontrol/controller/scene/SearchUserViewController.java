@@ -7,10 +7,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
-import javafx.scene.shape.Box;
 import org.zeki.employeecontrol.controller.app.AppController;
-import org.zeki.employeecontrol.model.Admin;
-import org.zeki.employeecontrol.model.User;
+import org.zeki.employeecontrol.model.user.Admin;
+import org.zeki.employeecontrol.model.user.User;
 import org.zeki.employeecontrol.util.FormularyHelper;
 import org.zeki.employeecontrol.util.SceneHelper;
 

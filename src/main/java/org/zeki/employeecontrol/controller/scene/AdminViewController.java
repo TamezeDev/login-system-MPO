@@ -6,7 +6,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import org.zeki.employeecontrol.controller.app.AppController;
-import org.zeki.employeecontrol.model.User;
 import org.zeki.employeecontrol.util.SceneHelper;
 
 import java.net.URL;

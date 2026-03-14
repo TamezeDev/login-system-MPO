@@ -5,8 +5,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import org.zeki.employeecontrol.controller.app.AppController;
-import org.zeki.employeecontrol.model.Admin;
-import org.zeki.employeecontrol.model.UserType;
+import org.zeki.employeecontrol.model.user.Admin;
+import org.zeki.employeecontrol.model.user.UserType;
 import org.zeki.employeecontrol.util.FormularyHelper;
 import org.zeki.employeecontrol.util.SceneHelper;
 

@@ -30,7 +30,7 @@ public final class FileTimeController extends FileController {
             System.err.println("ERROR: " + e.getMessage());
             label.setText("Error en la carga de datos");
         }
-        AppController.getInstance().getTransitionHelper().hideFeedBackLabel(label);
+        AppController.getInstance().getTransitionHelper().feedBackTransition(label);
     }
 
     public void saveFile(String[] userTime, Label label) {
@@ -45,12 +45,7 @@ public final class FileTimeController extends FileController {
             System.err.println("ERROR:" + e.getMessage());
         }
         label.setText("Fichada con éxito");
-        AppController.getInstance().getTransitionHelper().hideFeedBackLabel(label);
-    }
-
-    @Override
-    protected void saveFile(Label label) {
-
+        AppController.getInstance().getTransitionHelper().feedBackTransition(label);
     }
 
 }

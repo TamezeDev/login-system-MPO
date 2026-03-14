@@ -9,19 +9,15 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.Region;
 import org.zeki.employeecontrol.controller.app.AppController;
-import org.zeki.employeecontrol.model.Admin;
-import org.zeki.employeecontrol.model.User;
+import org.zeki.employeecontrol.model.user.Admin;
+import org.zeki.employeecontrol.model.user.User;
 import org.zeki.employeecontrol.util.SceneHelper;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class FullSearchUserViewController implements Initializable {
-
-    @FXML
-    private Label userNameLabel;
 
     @FXML
     private Label feedBackLabel;
@@ -50,7 +46,6 @@ public class FullSearchUserViewController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        AppController.getInstance().getCurrentUser().loadCurrentUserData(userNameLabel);
         initListeners();
     }
 

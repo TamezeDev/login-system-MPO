@@ -25,7 +25,7 @@ public class SceneHelper {
         } catch (IOException e) {
             Label label = (Label) node;
             label.setText("Error al cargar scene");
-            AppController.getInstance().getTransitionHelper().hideFeedBackLabel(label);
+            AppController.getInstance().getTransitionHelper().feedBackTransition(label);
             System.err.println("Error al capturar algún atributo de nodo");
             e.getMessage();
         }

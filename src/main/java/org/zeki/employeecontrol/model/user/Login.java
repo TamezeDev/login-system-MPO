@@ -1,6 +1,4 @@
-package org.zeki.employeecontrol.model;
-
-import javafx.scene.control.TextField;
+package org.zeki.employeecontrol.model.user;
 
 import java.util.Map;
 

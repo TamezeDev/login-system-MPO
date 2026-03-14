@@ -1,4 +1,4 @@
-package org.zeki.employeecontrol.model;
+package org.zeki.employeecontrol.model.user;
 
 import javafx.collections.ObservableList;
 import javafx.scene.control.Label;
@@ -10,11 +10,11 @@ public interface AdminFunction {
 
     void removeUser(String dni, Label label);
 
-    User searchUser(String id,Label label);
+    User searchUser(String id, Label label);
 
     ObservableList<User> showAllUsers();
 
     void changeUserPass(String dni, String pass, Label label);
 
-    void showControlTimeUsers();
+    ObservableList<String[]> showControlTimeUsers(Label label);
 }

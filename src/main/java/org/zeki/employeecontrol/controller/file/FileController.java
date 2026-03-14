@@ -2,7 +2,7 @@ package org.zeki.employeecontrol.controller.file;
 
 import javafx.scene.control.Label;
 import lombok.Getter;
-import org.zeki.employeecontrol.model.User;
+import org.zeki.employeecontrol.model.user.User;
 
 import java.io.File;
 import java.util.List;
@@ -16,5 +16,4 @@ public abstract class FileController {
 
     abstract void loadFile(Label label);
 
-    abstract void saveFile(Label label);
 }

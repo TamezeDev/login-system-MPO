@@ -7,9 +7,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import org.zeki.employeecontrol.controller.app.AppController;
 import org.zeki.employeecontrol.controller.file.FileUsersController;
 import org.zeki.employeecontrol.util.FormularyHelper;
+import org.zeki.employeecontrol.util.TransitionHelper;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -31,11 +34,21 @@ public class LoginViewController implements Initializable {
     @FXML
     private PasswordField passField;
 
+    @FXML
+    private VBox mainBox;
+
+    @FXML
+    private HBox signBox;
+
+    @FXML
+    private HBox titleBox;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         loadUserFile(); // LOAD USER LIST
         initListeners(); // INIT LISTENERS
+        firstUseAppAnimation(); // LOAD ANIMATION FIRST TIME
     }
 
     private void initListeners() {
@@ -60,6 +73,12 @@ public class LoginViewController implements Initializable {
         if (AppController.getInstance().getUsersList().isEmpty()) {
             FileUsersController fileUsersController = new FileUsersController();
             fileUsersController.loadFile(feedBackLabel);
+        }
+    }
+
+    private void firstUseAppAnimation() {
+        if (!AppController.getInstance().isStartedApp()) {
+            TransitionHelper.initialTransition(titleBox, signBox, mainBox);
         }
     }
 }

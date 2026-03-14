@@ -1,4 +1,4 @@
-package org.zeki.employeecontrol.model;
+package org.zeki.employeecontrol.model.user;
 
 import javafx.scene.control.Label;
 import org.zeki.employeecontrol.controller.app.AppController;

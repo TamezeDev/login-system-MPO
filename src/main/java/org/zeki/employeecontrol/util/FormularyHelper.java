@@ -11,7 +11,7 @@ public class FormularyHelper {
         for (TextField textField : textFields) {
             if (textField.getText().isEmpty()) {
                 label.setText("Hay campos vacíos");
-                AppController.getInstance().getTransitionHelper().hideFeedBackLabel(label);
+                AppController.getInstance().getTransitionHelper().feedBackTransition(label);
                 return true;
             }
         }
@@ -33,7 +33,7 @@ public class FormularyHelper {
     public static boolean checkSameFieldContent(TextField fieldA, TextField fieldB, Label label) {
         if (fieldA.getText().equals(fieldB.getText())) return true;
         label.setText("Los campos no coinciden");
-        AppController.getInstance().getTransitionHelper().hideFeedBackLabel(label);
+        AppController.getInstance().getTransitionHelper().feedBackTransition(label);
         return false;
     }
 

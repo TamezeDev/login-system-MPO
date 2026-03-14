@@ -2,12 +2,11 @@ package org.zeki.employeecontrol.controller.file;
 
 import javafx.scene.control.Label;
 import org.zeki.employeecontrol.controller.app.AppController;
-import org.zeki.employeecontrol.model.Admin;
-import org.zeki.employeecontrol.model.User;
-import org.zeki.employeecontrol.model.Worker;
+import org.zeki.employeecontrol.model.user.Admin;
+import org.zeki.employeecontrol.model.user.User;
+import org.zeki.employeecontrol.model.user.Worker;
 
 import java.io.*;
-import java.util.List;
 
 public final class FileUsersController extends FileController {
 
@@ -25,7 +24,7 @@ public final class FileUsersController extends FileController {
                 AppController.getInstance().createMainAdmin();
                 label.setText("Creado admin principal");
                 saveFile(label);
-                AppController.getInstance().getTransitionHelper().hideFeedBackLabel(label);
+                AppController.getInstance().getTransitionHelper().feedBackTransition(label);
                 return;
             } catch (IOException e) {
                 label.setText("Error al leer fichero");
@@ -55,10 +54,9 @@ public final class FileUsersController extends FileController {
             label.setText("Error de lectura global");
             System.err.println("ERROR: " + e.getMessage());
         }
-        AppController.getInstance().getTransitionHelper().hideFeedBackLabel(label);
+        AppController.getInstance().getTransitionHelper().feedBackTransition(label);
     }
 
-    @Override
     public void saveFile(Label label) {
         // WRITING USERS FILE
         try (ObjectOutputStream bos = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(file, false)))) {
@@ -70,7 +68,7 @@ public final class FileUsersController extends FileController {
             label.setText("Error al guardar usuario");
             System.err.println("ERROR:" + e.getMessage());
         }
-        AppController.getInstance().getTransitionHelper().hideFeedBackLabel(label);
+        AppController.getInstance().getTransitionHelper().feedBackTransition(label);
     }
 
 }

@@ -6,13 +6,16 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import org.zeki.employeecontrol.controller.app.AppController;
-import org.zeki.employeecontrol.model.Worker;
+import org.zeki.employeecontrol.model.user.Worker;
 import org.zeki.employeecontrol.util.SceneHelper;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class WorkersViewController implements Initializable {
+
+    @FXML
+    private Label userNameLabel;
 
     @FXML
     private Button userOutputBtn;
@@ -28,6 +31,7 @@ public class WorkersViewController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        AppController.getInstance().getCurrentUser().loadCurrentUserData(userNameLabel);
         initListeners();
     }
 
