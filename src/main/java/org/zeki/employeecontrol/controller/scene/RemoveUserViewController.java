@@ -14,7 +14,7 @@ import org.zeki.employeecontrol.util.SceneHelper;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class RemoveUserController implements Initializable {
+public class RemoveUserViewController implements Initializable {
 
     @FXML
     private Button clearBtn;

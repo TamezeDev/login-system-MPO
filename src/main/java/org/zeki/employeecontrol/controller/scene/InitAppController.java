@@ -20,6 +20,7 @@ public class InitAppController extends Application {
 
         stage.getIcons().add(mainIcon);
         stage.setTitle("Employee control");
+        stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
     }
